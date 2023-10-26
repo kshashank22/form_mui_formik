@@ -26,6 +26,7 @@ const FormPage = () => {
           <label>UserName</label>
           <br />
           <TextField
+            className="text"
             type="text"
             name="username"
             id="username"
@@ -43,6 +44,7 @@ const FormPage = () => {
           <label>Email</label>
           <br />
           <TextField
+            className="text"
             type="email"
             name="email"
             id="email"
@@ -60,6 +62,7 @@ const FormPage = () => {
           <label>Password</label>
           <br />
           <TextField
+            className="text"
             type="password"
             name="password"
             id="password"
@@ -70,6 +73,25 @@ const FormPage = () => {
         </div>
         {formikData.errors.password && formikData.touched.password ? (
           <p className="error">{formikData.errors.password}</p>
+        ) : (
+          ""
+        )}
+        <div className="inputBox">
+          <label>Confirm Password</label>
+          <br />
+          <TextField
+            className="text"
+            type="password"
+            name="confirmpassword"
+            id="confirmpassword"
+            value={formikData.values.confirmpassword}
+            onBlur={formikData.handleBlur}
+            onChange={formikData.handleChange}
+          />
+        </div>
+        {formikData.errors.confirmpassword &&
+        formikData.touched.confirmpassword ? (
+          <p className="error">{formikData.errors.confirmpassword}</p>
         ) : (
           ""
         )}
